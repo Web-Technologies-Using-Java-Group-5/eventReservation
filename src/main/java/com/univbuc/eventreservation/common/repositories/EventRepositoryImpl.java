@@ -1,6 +1,7 @@
 package com.univbuc.eventreservation.common.repositories;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.univbuc.eventreservation.admin.model.Event;
@@ -37,5 +38,10 @@ public class EventRepositoryImpl implements EventRepository {
         Event e = getEvent(id);
         e.setActive(false);
         return e;
+    }
+
+    @Override
+    public List<Event> getEvents() {
+        return events.stream().toList();
     }
 }
