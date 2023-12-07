@@ -2,10 +2,19 @@ package com.univbuc.eventreservation.admin.model;
 
 import java.util.Objects;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+
 public class Event {
     private int id;
+
+    @NotEmpty(message = "The name cannot be blank!")
     private String name;
+
+    @NotEmpty
     private String description;
+
+    @Min(value = 1)
     private int capacity;
 
     public Boolean getActive() {
