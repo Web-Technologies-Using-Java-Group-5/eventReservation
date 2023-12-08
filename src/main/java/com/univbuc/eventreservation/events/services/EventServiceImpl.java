@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.univbuc.eventreservation.admin.model.Event;
 import com.univbuc.eventreservation.common.repositories.EventRepository;
+import com.univbuc.eventreservation.common.repositories.EventRepositoryJPA;
 import com.univbuc.eventreservation.events.model.EventSelected;
 import com.univbuc.eventreservation.events.model.ReservationStatus;
 import com.univbuc.eventreservation.events.repositories.EventSelectionRepository;
@@ -12,10 +13,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EventServiceImpl implements EventService {
-    private final EventRepository eventRepository;
+    private final EventRepositoryJPA eventRepository;
     private final EventSelectionRepository eventSelectionRepository;
 
-    public EventServiceImpl(EventRepository eventRepository, EventSelectionRepository eventSelectionRepository) {
+    public EventServiceImpl(EventRepositoryJPA eventRepository, EventSelectionRepository eventSelectionRepository) {
         this.eventRepository = eventRepository;
         this.eventSelectionRepository = eventSelectionRepository;
     }

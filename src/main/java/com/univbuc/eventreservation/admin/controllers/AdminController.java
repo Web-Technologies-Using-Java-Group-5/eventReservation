@@ -32,7 +32,8 @@ public class AdminController {
     }
 
     @DeleteMapping("/events/{id}")
-    public ResponseEntity<Event> cancelEvent(@PathVariable int id){
-        return ResponseEntity.ok(adminService.cancelEvent(id));
+    public ResponseEntity<Void> cancelEvent(@PathVariable int id){
+        adminService.cancelEvent(id);
+        return ResponseEntity.noContent().build();
     }
 }

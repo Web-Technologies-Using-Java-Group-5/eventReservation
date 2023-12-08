@@ -2,10 +2,24 @@ package com.univbuc.eventreservation.users.model;
 
 import java.util.Objects;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
     private int id;
+
+    @Column(name = "userName")
     private String userName;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "role")
     private String role;
 
     public User() {
