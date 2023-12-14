@@ -1,9 +1,13 @@
 package com.univbuc.eventreservation.users.repositories;
 
+import java.util.Optional;
+
 import com.univbuc.eventreservation.users.model.User;
 
 public interface UserRepository {
-    User createUser(User user);
+    User save(User user);
 
-    User getUser(String userName);
+    User findByUserName(String userName);
+
+    Optional<User> findById(Integer id);
 }

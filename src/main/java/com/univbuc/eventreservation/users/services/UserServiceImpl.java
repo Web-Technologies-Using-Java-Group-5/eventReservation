@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
-    UserRepositoryJPA userRepository;
+    UserRepository userRepository;
 
-    public UserServiceImpl(UserRepositoryJPA userRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

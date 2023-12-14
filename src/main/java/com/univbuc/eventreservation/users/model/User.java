@@ -1,16 +1,21 @@
 package com.univbuc.eventreservation.users.model;
 
+import java.util.List;
 import java.util.Objects;
 
+import com.univbuc.eventreservation.admin.model.Event;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
 public class User {
     @Id
+    @GeneratedValue
     private int id;
 
     @Column(name = "userName")
@@ -21,6 +26,9 @@ public class User {
 
     @Column(name = "role")
     private String role;
+
+    @ManyToMany(targetEntity = Event.class)
+    private List<Event> eventReservations;
 
     public User() {
     }
@@ -86,5 +94,13 @@ public class User {
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
                 '}';
+    }
+
+    public List<Event> getEventReservations() {
+        return eventReservations;
+    }
+
+    public void setEventReservations(List<Event> eventReservations) {
+        this.eventReservations = eventReservations;
     }
 }
