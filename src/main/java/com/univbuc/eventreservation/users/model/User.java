@@ -40,6 +40,14 @@ public class User {
         this.role = role;
     }
 
+    public User(int id, String userName, String password, String role, List<Event> eventReservations) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.role = role;
+        this.eventReservations = eventReservations;
+    }
+
     public int getId() {
         return id;
     }

@@ -3,14 +3,15 @@ package com.univbuc.eventreservation.users.services;
 import com.univbuc.eventreservation.users.model.User;
 import com.univbuc.eventreservation.users.model.UserResponse;
 import com.univbuc.eventreservation.users.repositories.UserRepository;
-import com.univbuc.eventreservation.users.repositories.UserRepositoryJPA;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
     UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository) {
+
+    public UserServiceImpl(@Qualifier(value = "jpa") UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

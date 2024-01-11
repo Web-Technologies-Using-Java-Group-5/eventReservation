@@ -3,6 +3,7 @@ package com.univbuc.eventreservation.events.services;
 import java.util.List;
 
 import com.univbuc.eventreservation.admin.model.Event;
+import com.univbuc.eventreservation.common.exceptions.UserNotLoggedInException;
 import com.univbuc.eventreservation.common.model.EventTicket;
 import com.univbuc.eventreservation.common.repositories.EventRepository;
 import com.univbuc.eventreservation.common.repositories.EventTicketRepository;
@@ -44,7 +45,7 @@ public class EventServiceImpl implements EventService {
 
     private static void verifyUser(String token) {
         if (token == null || Strings.isBlank(token)){
-            throw new RuntimeException("User not logged in");
+            throw new UserNotLoggedInException("User not logged in");
         }
     }
 

@@ -2,7 +2,6 @@ package com.univbuc.eventreservation.admin.services;
 
 import com.univbuc.eventreservation.admin.model.Event;
 import com.univbuc.eventreservation.common.repositories.EventRepository;
-import com.univbuc.eventreservation.common.repositories.EventRepositoryJPA;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

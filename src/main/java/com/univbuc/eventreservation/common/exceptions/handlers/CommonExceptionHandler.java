@@ -1,6 +1,5 @@
 package com.univbuc.eventreservation.common.exceptions.handlers;
 
-import com.univbuc.eventreservation.admin.exceptions.EventAlreadyRegistered;
 import com.univbuc.eventreservation.common.exceptions.DatabaseError;
 import com.univbuc.eventreservation.common.exceptions.EventNotFoundException;
 import com.univbuc.eventreservation.common.exceptions.UnauthorizedUserException;

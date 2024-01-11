@@ -12,4 +12,6 @@ public interface EventRepositoryJPA extends JpaRepository<Event, Integer>, Event
     @Override
     @Query("select e from Event e where e.active = true order by e.capacity desc")
     List<Event> getEvents();
+
+    Event save(Event e);
 }

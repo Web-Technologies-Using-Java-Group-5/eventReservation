@@ -1,6 +1,5 @@
 package com.univbuc.eventreservation.users.exceptions.handlers;
 
-import com.univbuc.eventreservation.common.exceptions.EventNotFoundException;
 import com.univbuc.eventreservation.common.exceptions.UserNotLoggedInException;
 import com.univbuc.eventreservation.common.exceptions.handlers.BaseExceptionHandler;
 import com.univbuc.eventreservation.users.exceptions.InvalidCredentialsException;
