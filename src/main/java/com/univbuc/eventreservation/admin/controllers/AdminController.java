@@ -2,6 +2,7 @@ package com.univbuc.eventreservation.admin.controllers;
 
 import com.univbuc.eventreservation.admin.model.Event;
 import com.univbuc.eventreservation.admin.services.AdminService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,7 @@ public class AdminController {
     }
 
     @PostMapping("/events")
-    public ResponseEntity<Event> addEvent(@RequestBody Event event){
+    public ResponseEntity<Event> addEvent(@Valid @RequestBody Event event){
         return ResponseEntity.ok(adminService.addEvent(event));
     }
 
@@ -31,7 +32,8 @@ public class AdminController {
     }
 
     @DeleteMapping("/events/{id}")
-    public ResponseEntity<Event> cancelEvent(@PathVariable int id){
-        return ResponseEntity.ok(adminService.cancelEvent(id));
+    public ResponseEntity<Void> cancelEvent(@PathVariable int id){
+        adminService.cancelEvent(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -2,10 +2,31 @@ package com.univbuc.eventreservation.admin.model;
 
 import java.util.Objects;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+
+@Entity
 public class Event {
+
+    @Id
+    @GeneratedValue
     private int id;
+
+    @Column(name="event_name")
+
+    @NotEmpty(message = "The name cannot be blank!")
     private String name;
+
+    @Column(name = "description")
+    @NotEmpty
     private String description;
+
+    @Min(value = 1)
+    @Column(name = "capacity")
     private int capacity;
 
     public Boolean getActive() {

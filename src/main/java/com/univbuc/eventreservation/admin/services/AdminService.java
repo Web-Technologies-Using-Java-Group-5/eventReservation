@@ -5,5 +5,5 @@ import com.univbuc.eventreservation.admin.model.Event;
 public interface AdminService {
     Event addEvent(Event event);
     Event updateEvent(Event event, int id);
-    Event cancelEvent(int id);
+    void cancelEvent(Integer id);
 }
